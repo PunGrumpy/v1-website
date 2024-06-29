@@ -1,6 +1,6 @@
 <div align="center">
     <h1><code>🐬</code> PunGrumpy's Personal Website</h1>
-    <img src=".image/preview.png" alt="Website Preview" width="100%" height="auto">
+    <img src="/public/preview.png" alt="Website Preview" width="100%" height="auto">
     <p>
         <sub>
             <strong>
