@@ -27,7 +27,7 @@ export const metadata = {
   robots: 'index, follow',
   openGraph: {
     site_name: 'PunGrumpy',
-    url: '/',
+    url: 'https://pungrumpy.com',
     title: 'PunGrumpy - Website',
     description: 'A personal website for PunGrumpy.',
     type: 'website',
