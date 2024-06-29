@@ -7,9 +7,7 @@ const variants = {
   exit: { opacity: 0, x: -0, y: 20 }
 }
 
-const Layout = ({ children, title }) => {
-  const pageTitle = `${title} - Noppakorn Kaewsalabnil`
-
+const Layout = ({ children }) => {
   return (
     <motion.article
       initial="hidden"
@@ -20,13 +18,6 @@ const Layout = ({ children, title }) => {
       style={{ position: 'relative' }}
     >
       <>
-        {title && (
-          <>
-            <title>{pageTitle}</title>
-            <meta name="og:title" content={pageTitle} />
-            <meta name="twitter:title" content={pageTitle} />
-          </>
-        )}
         {children}
         <GridItemStyle />
       </>

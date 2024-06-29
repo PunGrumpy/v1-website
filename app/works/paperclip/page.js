@@ -14,7 +14,7 @@ import { Meta, Title, WorkImage } from '@/components/work'
 import P from '@/components/paragraph'
 
 const Work = () => (
-  <Layout title="Paperclip">
+  <Layout>
     <Container>
       <Title>
         Paperclip <Badge>2024</Badge>

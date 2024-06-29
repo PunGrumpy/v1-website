@@ -23,7 +23,7 @@ const categories = [
 ]
 
 const Works = () => (
-  <Layout title="Works">
+  <Layout>
     <Container>
       {categories.map((category, catIndex) => (
         <div key={catIndex}>
