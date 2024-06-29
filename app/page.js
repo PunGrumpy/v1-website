@@ -6,6 +6,7 @@ import Paragraph from '@/components/paragraph'
 import Section from '@/components/section'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import {
+  Badge,
   Box,
   Button,
   Container,
@@ -46,9 +47,9 @@ export default function Home() {
 
   const iLoveItems = [
     { title: 'Coding' },
-    { title: 'Music', href: 'https://www.instagram.com/ansonseabra/' },
+    { title: 'Music' },
     { title: 'Playing Guitar' },
-    { title: 'Photography', href: 'https://500px.com/p/whatthepunphoto' },
+    { title: 'Photography' },
     { title: 'Custom Keyboard' },
     { title: 'DevOps' }
   ]
@@ -75,6 +76,8 @@ export default function Home() {
       icon: <IoLogoLinkedin />
     }
   ]
+
+  const colorSchemeBadge = useColorModeValue('purple', 'pink')
 
   return (
     <Layout>
@@ -171,15 +174,11 @@ export default function Home() {
             I Love
           </Heading>
           <Box display="flex" flexWrap="wrap">
-            {iLoveItems.map(({ title, href }, index) => (
+            {iLoveItems.map(({ title }, index) => (
               <Box key={index} textAlign="center">
-                {href ? (
-                  <Link as="a" href={href} target="_blank">
-                    <Paragraph>{title}</Paragraph>
-                  </Link>
-                ) : (
-                  <Paragraph>{title}</Paragraph>
-                )}
+                <Badge colorScheme={colorSchemeBadge} p={2} m={1}>
+                  {title}
+                </Badge>
               </Box>
             ))}
           </Box>
