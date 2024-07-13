@@ -15,10 +15,23 @@ const universityProjects = [
   }
 ]
 
+const works = [
+  {
+    id: 'pongsathorn-portfolio',
+    title: "Pongsathorn's Portfolio",
+    description:
+      'A Portfolio website for Pongsathorn, developed as part of the Web Development Freelancer work.'
+  }
+]
+
 const categories = [
   {
     title: 'University Projects',
     projects: universityProjects
+  },
+  {
+    title: 'Works',
+    projects: works
   }
 ]
 
