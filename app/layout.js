@@ -14,6 +14,9 @@ export const viewport = {
 }
 
 export const metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_METADATA_BASE || 'http://localhost:3000'
+  ),
   title: {
     default: 'PunGrumpy - Website',
     template: '%s - Noppakorn Kaewsalabnil'
@@ -47,8 +50,8 @@ export const metadata = {
     images: [
       {
         url: '/twitter-card.png',
-        width: 1200,
-        height: 630,
+        width: 1500,
+        height: 500,
         alt: 'PunGrumpy - Website'
       }
     ],
