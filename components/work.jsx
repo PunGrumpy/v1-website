@@ -1,5 +1,5 @@
 import { ChevronRightIcon } from '@chakra-ui/icons'
-import { Badge,Box, Heading, Image, Link } from '@chakra-ui/react'
+import { Badge, Box, Heading, Image, Link } from '@chakra-ui/react'
 
 export const Title = ({ children }) => (
   <Box>

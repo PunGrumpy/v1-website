@@ -1,16 +1,16 @@
 {
   "name": "pungrumpy-website",
-  "description": "PunGrumpy's personal website",
   "version": "4.0.0",
   "private": true,
+  "description": "PunGrumpy's personal website",
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "dev": "next dev",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "start": "next start"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",

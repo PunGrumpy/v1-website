@@ -1,4 +1,4 @@
-import { Box, LinkBox, LinkOverlay,Text } from '@chakra-ui/react'
+import { Box, LinkBox, LinkOverlay, Text } from '@chakra-ui/react'
 import { Global } from '@emotion/react'
 import Image from 'next/image'
 
@@ -51,4 +51,4 @@ const GridItemStyle = () => (
   />
 )
 
-export { GridItem, GridItemStyle,WorkGridItem }
+export { GridItem, GridItemStyle, WorkGridItem }
