@@ -1,17 +1,18 @@
 'use client'
 
+import { ExternalLinkIcon } from '@chakra-ui/icons'
 import {
-  Container,
+  AspectRatio,
   Badge,
+  Container,
   Link,
   List,
-  ListItem,
-  AspectRatio
+  ListItem
 } from '@chakra-ui/react'
-import { ExternalLinkIcon } from '@chakra-ui/icons'
+
 import Layout from '@/components/layout/article'
-import { Meta, Title, WorkImage } from '@/components/work'
 import P from '@/components/paragraph'
+import { Meta, Title, WorkImage } from '@/components/work'
 
 const Work = () => (
   <Layout>

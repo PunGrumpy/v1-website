@@ -1,9 +1,5 @@
 'use client'
 
-import { BioSection, BioYear } from '@/components/bio'
-import Layout from '@/components/layout/article'
-import Paragraph from '@/components/paragraph'
-import Section from '@/components/section'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import {
   Badge,
@@ -23,6 +19,11 @@ import {
   IoLogoInstagram,
   IoLogoLinkedin
 } from 'react-icons/io5'
+
+import { BioSection, BioYear } from '@/components/bio'
+import Layout from '@/components/layout/article'
+import Paragraph from '@/components/paragraph'
+import Section from '@/components/section'
 
 export default function Home() {
   const bioItems = [

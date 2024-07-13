@@ -2,11 +2,11 @@
 
 import {
   Box,
-  Heading,
-  Text,
+  Button,
   Container,
   Divider,
-  Button,
+  Heading,
+  Text,
   useColorModeValue
 } from '@chakra-ui/react'
 

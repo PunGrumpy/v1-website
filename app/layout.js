@@ -1,10 +1,12 @@
 import './globals.css'
+
+import { ColorModeScript } from '@chakra-ui/react'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import { ColorModeScript } from '@chakra-ui/react'
-import Providers from '@/components/providers'
-import MainLayout from '@/components/layout/main'
+
 import { fonts } from '@/components/fonts'
+import MainLayout from '@/components/layout/main'
+import Providers from '@/components/providers'
 
 export const viewport = {
   themeColor: [

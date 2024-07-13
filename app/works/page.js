@@ -2,9 +2,9 @@
 
 import { Container, Heading, SimpleGrid } from '@chakra-ui/react'
 
+import { WorkGridItem } from '@/components/grid-item'
 import Layout from '@/components/layout/article'
 import Section from '@/components/section'
-import { WorkGridItem } from '@/components/grid-item'
 
 const universityProjects = [
   {
