@@ -1,11 +1,12 @@
 'use client'
 
-import dynamic from 'next/dynamic'
-import NavBar from '../navbar'
 import { Box, Container } from '@chakra-ui/react'
-import Footer from '../footer'
-import VoxelGhostLoader from '../voxel-ghost-loader'
 import { AnimatePresence } from 'framer-motion'
+import dynamic from 'next/dynamic'
+
+import Footer from '../footer'
+import NavBar from '../navbar'
+import VoxelGhostLoader from '../voxel-ghost-loader'
 
 const LazyVoxelGhost = dynamic(() => import('../voxel-ghost'), {
   ssr: false,

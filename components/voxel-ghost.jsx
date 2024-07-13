@@ -1,10 +1,11 @@
 'use client'
 
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useCallback,useEffect, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+
 import { loadGLTFModel } from '../lib/model'
-import { GhostSpinner, GhostContainer } from './voxel-ghost-loader'
+import { GhostContainer,GhostSpinner } from './voxel-ghost-loader'
 
 function easeOutCirc(x) {
   return Math.sqrt(1 - Math.pow(x - 1, 4))
