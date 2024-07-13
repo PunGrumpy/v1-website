@@ -3,6 +3,7 @@
 import { Box, Container } from '@chakra-ui/react'
 import { AnimatePresence } from 'framer-motion'
 import dynamic from 'next/dynamic'
+import { usePathname } from 'next/navigation'
 
 import Footer from '../footer'
 import NavBar from '../navbar'
@@ -13,10 +14,12 @@ const LazyVoxelGhost = dynamic(() => import('../voxel-ghost'), {
   loading: () => <VoxelGhostLoader />
 })
 
-const MainLayout = ({ children, router }) => {
+const MainLayout = ({ children }) => {
+  const path = usePathname()
+
   return (
     <Box as="main" pb={8}>
-      <NavBar path={router?.asPath} />
+      <NavBar path={path} />
       <Container maxW="container.md" pt={14}>
         <LazyVoxelGhost />
         <AnimatePresence
