@@ -11,7 +11,8 @@ import {
   MenuItem,
   MenuList,
   Stack,
-  useColorModeValue} from '@chakra-ui/react'
+  useColorModeValue
+} from '@chakra-ui/react'
 import { forwardRef } from 'react'
 import { IoLogoGithub } from 'react-icons/io5'
 
