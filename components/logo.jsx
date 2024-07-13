@@ -1,11 +1,10 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Text, useColorModeValue } from '@chakra-ui/react'
+import { Text, useColorModeValue, Box } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 
-const LogoBox = styled.span`
+const LogoBox = styled(Box)`
   font-weight: bold;
-  font-size: 18px;
   display: inline-flex;
   align-items: center;
   padding: 10px;
@@ -24,13 +23,15 @@ const Logo = () => {
   const ghostImage = `/images/logo${useColorModeValue('', '-dark')}.png`
 
   return (
-    <Link href="/">
-      <LogoBox>
+    <Link href="/" passHref>
+      <LogoBox as="a">
         <Image src={ghostImage} width={35} height={35} alt="logo" />
         <Text
           color={useColorModeValue('gray.800', 'whiteAlpha.900')}
-          fontSize="xl"
+          fontWeight="bold"
           ml={2}
+          fontSize={['md', 'xl']}
+          noOfLines={1}
         >
           Noppakorn Kaewsalabnil
         </Text>
