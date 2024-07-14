@@ -39,8 +39,8 @@ export const metadata = {
     images: [
       {
         url: '/og-image.png',
-        width: 1200,
-        height: 630,
+        width: 1920,
+        height: 1080,
         alt: 'PunGrumpy - Website'
       }
     ]
@@ -52,7 +52,7 @@ export const metadata = {
     images: [
       {
         url: '/twitter-card.png',
-        width: 1500,
+        width: 1920,
         height: 500,
         alt: 'PunGrumpy - Website'
       }
