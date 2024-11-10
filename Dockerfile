@@ -1,43 +1,52 @@
-ARG BUN_VERSION=latest
+# Use the official Bun image
+FROM oven/bun:1 AS base
 
-# Stage 1: Dependencies
-FROM oven/bun:$BUN_VERSION AS dependencies
+# Set working directory
+WORKDIR /app
 
-LABEL maintainer="pungrumpy"
+# Install dependencies
+FROM base AS dependencies
+COPY package.json bun.lockb ./
+RUN bun install
 
-WORKDIR /home/pungrumpy/app
-
-COPY ./package.json ./bun.lockb ./
-
-RUN bun install --ignore-scripts
-
-# Stage 2: Builder
-FROM oven/bun:$BUN_VERSION AS builder
-
-LABEL maintainer="pungrumpy"
-
-WORKDIR /home/pungrumpy/app
-
-COPY --from=dependencies /home/pungrumpy/app/node_modules ./node_modules
-
+# Build the app
+FROM base AS builder
+WORKDIR /app
+COPY --from=dependencies /app/node_modules ./node_modules
 COPY . .
 
+# Build (optional mouting secrets)
 RUN bun run build
 
-# Stage 3: Production
-FROM oven/bun:$BUN_VERSION AS production
-
-LABEL maintainer="pungrumpy"
+# Production image
+FROM base AS runner
+WORKDIR /app
 
 ENV NODE_ENV=production
 
-WORKDIR /home/pungrumpy/app
+# Update and upgrade packages to fix vulnerabilities
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y --no-install-recommends \
+    e2fsprogs=1.46.2-2+deb11u1 \
+    libcom-err2=1.46.2-2+deb11u1 \
+    libext2fs2=1.46.2-2+deb11u1 \
+    libss2=1.46.2-2+deb11u1 \
+    logsave=1.46.2-2+deb11u1 && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
-COPY --from=builder /home/pungrumpy/app/node_modules ./node_modules
+# Don't run as root
+RUN addgroup --system --gid 1001 bunjs
+RUN adduser --system --uid 1001 nextjs
+USER nextjs
 
-COPY --from=builder /home/pungrumpy/app/dist ./dist
-COPY ./bun.lockb ./
+# Copy necessary files
+COPY --from=builder /app/public ./public
+COPY --from=builder --chown=nextjs:bunjs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:bunjs /app/.next/static ./.next/static
 
 EXPOSE 3000
 
-CMD ["bun", "run", "start"]
+# Start the app
+CMD ["bun", "server.js"]

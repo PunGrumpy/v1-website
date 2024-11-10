@@ -9,4 +9,4 @@ services:
       - '3000'
     ports:
       - '3000:3000'
-    command: ['bun', 'run', 'start']
+    command: ['bun', 'server.js']
