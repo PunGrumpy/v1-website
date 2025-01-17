@@ -63,8 +63,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={fonts.mplus.variable}>
-      <body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={fonts.mplus.variable}>
         <Providers>
           <ColorModeScript initialColorMode="system" />
           <MainLayout>{children}</MainLayout>
