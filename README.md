@@ -1,3 +1,11 @@
+> [!WARNING]
+> This is version 1 of my website. For the latest version (v3), please visit [https://www.pungrumpy.com/](https://www.pungrumpy.com/)
+
+> [!NOTE]
+> You can explore the source code of version 2 of my website in the [v2 repository](https://github.com/PunGrumpy/v2-website).
+
+---
+
 <div align="center">
     <h1><code>🐬</code> PunGrumpy's Personal Website</h1>
     <img src="/public/preview.png" alt="Website Preview" width="100%" height="auto">
