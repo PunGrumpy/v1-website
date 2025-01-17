@@ -19,14 +19,16 @@ import { IoLogoGithub } from 'react-icons/io5'
 import Logo from './logo'
 import ThemeToggleButton from './theme-toggle-button'
 
-const LinkItem = ({ href, path, target, children, ...props }) => {
+const LinkItem = ({ disabled, href, path, target, children, ...props }) => {
   const active = path === href
 
   const inactiveColor = useColorModeValue('gray.800', 'whiteAlpha.900')
   return (
     <Link
       as="a"
-      href={href}
+      href={disabled ? undefined : href}
+      disabled={disabled}
+      _disabled={{ opacity: 0.5, pointerEvents: 'none' }}
       p={2}
       bg={active ? 'grassTeal' : undefined}
       color={active ? '#202023' : inactiveColor}
@@ -81,11 +83,13 @@ const Navbar = props => {
           <LinkItem href="/works" path={path}>
             Works
           </LinkItem>
-          <LinkItem href="http://takes.pungrumpy.com/">takes</LinkItem>
+          <LinkItem disabled href="http://takes.pungrumpy.com/">
+            takes
+          </LinkItem>
           <LinkItem href="https://cv.pungrumpy.com/">CV</LinkItem>
           <LinkItem
             target="_blank"
-            href="https://github.com/PunGrumpy/PunGrumpy-Website"
+            href="https://github.com/PunGrumpy/v1-website"
             path={path}
             display="inline-flex"
             alignItems="center"
@@ -111,12 +115,16 @@ const Navbar = props => {
                 <MenuItem as={MenuLink} href="/works">
                   Works
                 </MenuItem>
-                <MenuItem as={MenuLink} href="https://takes.pungrumpy.com/">
+                <MenuItem
+                  as={MenuLink}
+                  disabled
+                  href="https://takes.pungrumpy.com/"
+                >
                   Takes
                 </MenuItem>
                 <MenuItem
                   as={Link}
-                  href="https://github.com/PunGrumpy/PunGrumpy-Website"
+                  href="https://github.com/PunGrumpy/v1-website"
                 >
                   View Source
                 </MenuItem>
