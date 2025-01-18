@@ -6,6 +6,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 
 import { fonts } from '@/components/fonts'
 import MainLayout from '@/components/layout/main'
+import { NewWorkOverlay } from '@/components/new-work-overlay'
 import Providers from '@/components/providers'
 
 export const viewport = {
@@ -67,7 +68,10 @@ export default function RootLayout({ children }) {
       <body className={fonts.mplus.variable}>
         <Providers>
           <ColorModeScript initialColorMode="system" />
-          <MainLayout>{children}</MainLayout>
+          <MainLayout>
+            {children}
+            <NewWorkOverlay />
+          </MainLayout>
           <Analytics />
           <SpeedInsights />
         </Providers>
