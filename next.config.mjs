@@ -5,7 +5,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'www.pungrumpy.com'
+        hostname: 'assets.pungrumpy.com'
       }
     ]
   }

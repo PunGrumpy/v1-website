@@ -5,10 +5,10 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
 const images = [
-  'https://www.pungrumpy.com/screenshot/preview.png',
-  'https://www.pungrumpy.com/screenshot/preview-iphone.png',
-  'https://www.pungrumpy.com/screenshot/preview-2.png',
-  'https://www.pungrumpy.com/screenshot/preview-iphone-2.png'
+  'https://assets.pungrumpy.com/preview/desktop-home.png',
+  'https://assets.pungrumpy.com/preview/desktop-about.png',
+  'https://assets.pungrumpy.com/preview/mobile-home.png',
+  'https://assets.pungrumpy.com/preview/mobile-about.png'
 ]
 
 const useImageRotation = (images, interval) => {
